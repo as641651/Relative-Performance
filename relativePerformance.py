@@ -135,6 +135,7 @@ if __name__ == "__main__":
         res = sorted(l, key = operator.itemgetter(1),reverse=True)
         print(k.split("/")[-1], res)
 
-    out_file = "scores-out_{}_{}_{}_{}_{}.json".format(S,T,M,K,t)
+    out_id = params.file.split("/")[-1].split(".")[0]
+    out_file = "logs/scores-{}_{}_{}_{}_{}_{}.json".format(out_id,S,T,M,K,t)
     with open(out_file,"w") as f:
         json.dump(FxCs,f,cls=NpEncoder)
