@@ -125,8 +125,8 @@ if __name__ == "__main__":
     t = params.t
     FxCs = {}
     for k,v in data.items():
-        if not "01" in k:
-            continue
+        # if not "01" in k:
+        #     continue
         data_r = reduce_sample_size(v,S)
         FxCs[k] = {}
         #FxCs[k]["F"], FxCs[k]["C"] = getF(data_r,1,S,1,0.9)
