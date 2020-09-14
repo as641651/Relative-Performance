@@ -1,0 +1,3 @@
+[submodule "measurements/linnea"]
+	path = measurements/linnea
+	url = https://github.com/HPAC/linnea.git
