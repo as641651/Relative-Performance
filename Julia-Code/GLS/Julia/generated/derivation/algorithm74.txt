@@ -1,0 +1,49 @@
+# cost 2.04e+08
+
+z2 = ((X2^T S2^-1 X2)^-1 X2^T S2^-1 y2)
+
+tmp47 = X2^T                  # 1
+
+z2 = ((tmp47 S2^-1 X2)^-1 X2^T S2^-1 y2)
+
+(L21 L21^T) = S2              # 5.21e+06
+
+z2 = ((tmp47 L21^-T L21^-1 X2)^-1 X2^T L21^-T L21^-1 y2)
+
+tmp48 = (tmp47 L21^-T)        # 3.12e+07
+
+z2 = ((tmp48 L21^-1 X2)^-1 X2^T L21^-T L21^-1 y2)
+
+tmp48 = (X2^T L21^-T)
+z2 = ((tmp48 tmp48^T)^-1 tmp48 L21^-1 y2)
+
+tmp33 = (L21^-1 X2)           # 3.12e+07
+
+tmp48 = tmp33^T
+z2 = ((tmp48 tmp48^T)^-1 tmp48 L21^-1 y2)
+
+tmp48 = tmp33^T               # 1
+
+z2 = ((tmp48 tmp48^T)^-1 tmp48 L21^-1 y2)
+
+tmp32 = (tmp48 L21^-1)        # 3.12e+07
+
+z2 = ((tmp48 tmp48^T)^-1 tmp32 y2)
+
+tmp27 = (tmp48 tmp48^T)       # 6.25e+07
+
+z2 = (tmp27^-1 tmp32 y2)
+
+tmp39 = (tmp32 y2)            # 2.5e+05
+
+z2 = (tmp27^-1 tmp39)
+
+(L35 L35^T) = tmp27           # 4.17e+07
+
+z2 = (L35^-T L35^-1 tmp39)
+
+tmp41 = (L35^-1 tmp39)        # 2.5e+05
+
+tmp26 = (L35^-T tmp41)        # 2.5e+05
+
+z2 = tmp26

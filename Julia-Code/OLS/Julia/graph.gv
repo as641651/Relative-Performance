@@ -1,0 +1,63 @@
+digraph G {
+ranksep=2.5;
+rankdir=TB;
+node0 [shape=record, label="{ b1 = ((X1^T X1)^-1 X1^T y1) |{ 0 | None | 0 |  |  } }"];
+node0 -> node4 [style=bold, label="tmp7 = (X1^T X1) 2.5e+08"];
+node0 -> node15 [label="(Q1 R2) = X1 8.33e+08"];
+node0 -> node16 [style=bold, label="tmp15 = (X1^T y1) 1e+06"];
+node0 -> node25 [label="(U3 S4 V5) = X1 4.5e+09"];
+node0 -> node4 [style=bold, label="tmp7 = (X1^T X1) 5e+08"];
+
+node4 [shape=record, label="{ b1 = (tmp7^-1 X1^T y1) |{ 4 | None | 2.5e+08 |  |  } }"];
+node4 -> node5 [style=bold, label="(L8 L8^T) = tmp7 4.17e+07"];
+node4 -> node8 [style=bold, label="tmp15 = (X1^T y1) 1e+06"];
+node4 -> node21 [label="(Q9 R10) = tmp7 3.33e+08"];
+node4 -> node23 [label="(Z11 W12 Z11^T) = tmp7 4.17e+08"];
+
+node5 [shape=record, label="{ b1 = (L8^-T L8^-1 X1^T y1) |{ 5 | None | 2.92e+08 | tmp7 |  } }"];
+node5 -> node6 [style=bold, label="tmp15 = (X1^T y1) 1e+06
+tmp17 = (L8^-1 tmp15) 2.5e+05
+tmp13 = (L8^-T tmp17) 2.5e+05"];
+node5 -> node7 [label="tmp14 = (X1 L8^-T) 2.5e+08"];
+node5 -> node9 [style=bold, label="tmp15 = (X1^T y1) 1e+06"];
+
+node6 [shape=record, label="{ b1 = tmp13 |{ 6 | None | 2.93e+08 |  |  } }"];
+
+node7 [shape=record, label="{ b1 = (L8^-T tmp14^T y1) |{ 7 | None | 5.42e+08 |  | pruned } }"];
+
+node8 [shape=record, label="{ b1 = (tmp7^-1 tmp15) |{ 8 | None | 2.51e+08 |  |  } }"];
+node8 -> node9 [style=bold, label="(L8 L8^T) = tmp7 4.17e+07"];
+node8 -> node14 [label="(Q9 R10) = tmp7 3.33e+08"];
+node8 -> node20 [label="(Z11 W12 Z11^T) = tmp7 4.17e+08"];
+
+node9 [shape=record, label="{ b1 = (L8^-T L8^-1 tmp15) |{ 9 | None | 2.93e+08 | tmp7 |  } }"];
+node9 -> node6 [style=bold, label="tmp17 = (L8^-1 tmp15) 2.5e+05
+tmp13 = (L8^-T tmp17) 2.5e+05"];
+node9 -> node11 [style=bold, label="tmp17 = (L8^-1 tmp15) 2.5e+05"];
+
+node11 [shape=record, label="{ b1 = (L8^-T tmp17) |{ 11 | None | 2.93e+08 |  |  } }"];
+node11 -> node6 [style=bold, label="tmp13 = (L8^-T tmp17) 2.5e+05"];
+
+node14 [shape=record, label="{ b1 = (R10^-1 Q9^T tmp15) |{ 14 | None | 5.84e+08 | tmp7 | pruned } }"];
+
+node15 [shape=record, label="{ b1 = (R2^-1 Q1^T y1) |{ 15 | None | 8.33e+08 | X1 | pruned } }"];
+
+node16 [shape=record, label="{ b1 = ((X1^T X1)^-1 tmp15) |{ 16 | None | 1e+06 |  |  } }"];
+node16 -> node8 [style=bold, label="tmp7 = (X1^T X1) 2.5e+08"];
+node16 -> node18 [label="(Q1 R2) = X1 8.33e+08"];
+node16 -> node8 [style=bold, label="tmp7 = (X1^T X1) 5e+08"];
+node16 -> node24 [label="(U3 S4 V5) = X1 4.5e+09"];
+
+node18 [shape=record, label="{ b1 = (R2^-1 R2^-T tmp15) |{ 18 | None | 8.34e+08 | X1 | pruned } }"];
+
+node20 [shape=record, label="{ b1 = (Z11 W12^-1 Z11^T tmp15) |{ 20 | None | 6.68e+08 | tmp7 | pruned } }"];
+
+node21 [shape=record, label="{ b1 = (R10^-1 Q9^T X1^T y1) |{ 21 | None | 5.83e+08 | tmp7 | pruned } }"];
+
+node23 [shape=record, label="{ b1 = (Z11 W12^-1 Z11^T X1^T y1) |{ 23 | None | 6.67e+08 | tmp7 | pruned } }"];
+
+node24 [shape=record, label="{ b1 = (V5^T (S4^T S4)^-1 V5 tmp15) |{ 24 | None | 4.5e+09 | X1 | pruned } }"];
+
+node25 [shape=record, label="{ b1 = (V5^T (S4^T S4)^-1 S4^T U3^T y1) |{ 25 | None | 4.5e+09 | X1 | pruned } }"];
+
+}

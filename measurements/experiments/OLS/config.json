@@ -1,0 +1,18 @@
+{
+	"expression_id":"OLS",
+	"arch_id":"BE_hdc072",
+	"cluster":false,
+	"memory":"10G",
+	"num_hours":12,
+	"node":"",
+	"reuse_expressions":false,
+	"divide_runs":-1,
+	"num_threads":4,
+	"delta_threads":0,
+	"num_reps":50,
+	"time_limit":10,
+	"seed":0,
+	"experiments":[
+	    "Example01"
+	]
+}
