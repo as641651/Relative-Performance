@@ -30,10 +30,13 @@ timings.json
 
 ### Parameters
 
-T:  Number of repetition of the Sort Function
-M:  Number of bootstrap iterations in the Compare function
-K:  Bootstrap sample size
-t: Comparison threshold
+   T:  Number of repetition of the Sort Function
+   
+   M:  Number of bootstrap iterations in the Compare function
+   
+   K:  Bootstrap sample size in the Compare function
+   
+   t: Comparison threshold
 
 ### Usage
 Example
