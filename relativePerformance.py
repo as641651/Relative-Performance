@@ -112,7 +112,7 @@ if __name__ == "__main__":
     parser.add_argument('-M', type=int,required=True)
     parser.add_argument('-K', type=int, required=True)
     parser.add_argument('-t', type=float, required=True)
-    parser.add_argument('-S', type=int, required=True)
+    parser.add_argument('-S', type=int, required=False)
     #parser.add_argument('--slrum',dest='slrum', action='store_true')
     params = parser.parse_args()
     with open(params.file) as f:
@@ -127,7 +127,8 @@ if __name__ == "__main__":
     for k,v in data.items():
         # if not "01" in k:
         #     continue
-        data_r = reduce_sample_size(v,S)
+        #data_r = reduce_sample_size(v,S)
+        data_r = v
         FxCs[k] = {}
         #FxCs[k]["F"], FxCs[k]["C"] = getF(data_r,1,S,1,0.9)
         FxCs[k]["F"], FxCs[k]["C"] = getF(data_r,T,K,M,t)
